@@ -1,5 +1,5 @@
 colorama==0.4.3
-Django==3.0.1
+Django==3.0.3
 Requests==2.22.0
 urllib3==1.25.8
 phonenumbers==8.10.2
