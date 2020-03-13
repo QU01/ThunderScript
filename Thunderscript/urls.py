@@ -18,11 +18,11 @@ from django.urls import path
 from portada.views import inicio
 from portada.views import plataforma
 from portada.views import info
-from portada.views import phoneinfo
+from portada.views import VULNSCAN
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', inicio),
+    path('',inicio, name='home'),
     path('plataforma/', plataforma),
     path('info/', info),
-    path('phone/', phoneinfo),
+    path('Scan/', VULNSCAN),
 ]

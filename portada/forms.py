@@ -10,5 +10,4 @@ class zero(forms.Form):
 
 class mack(forms.Form):
 
-    website = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Phone'}), max_length=50, label='',required=True)
-
+    IP = forms.CharField(label='IP', max_length=100)

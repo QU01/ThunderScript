@@ -48,6 +48,11 @@
           color: aqua;
           font-family:fantasy, cursive;
       }
+      #form{
+        color: aqua;
+
+
+      }
 
       #zero{
         background-image: url(https://wallpapercave.com/wp/wp2998663.jpg);
@@ -78,7 +83,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="http://127.0.0.1:8000/phone/">PHONE INFO <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="http://127.0.0.1:8000/Scan/">GEOlocate<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/plataforma/">EMAIL HUNTER</a>
@@ -87,7 +92,7 @@
           <a class="nav-link" href="http://127.0.0.1:8000/info/"  >EMAIL INFO</a>
         </li>
       </ul>
-      
+
     </div>
   </nav>
 </header>
@@ -99,21 +104,21 @@
     <p id="mt-6"class="lead">Revolutionary Hacking</p>
     <form action="" method="POST">
         {% csrf_token %}
-        {{mack}}
+      <div id="form">  {{mack}} </div>
         <button type="submit">Send</button>
       </form>
-      <div class="col-md-12"> 
+      <div class="col-md-12">
            <div>
             <h4 id="mt-6">Resultados</h4>
           </div>
-           
-           
-            <pre id="lio">{{output}}</pre> 
 
-           
+
+            <pre id="lio">{{output}}</pre>
+
+
 
       </div>
-      
+
   </div>
 </main>
 
