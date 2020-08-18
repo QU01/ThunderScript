@@ -1,0 +1,42 @@
+<!-- Django -->
+{% block head_content %}
+<title>Thunderscript Sign In</title>
+{% endblock%}
+{% load static %}
+<!-- Stylesheet -->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<!-- HTML -->
+
+<div class="wrapper fadeInDown" id="loginpage">
+  <div id="formContent">
+
+    {% block container %}
+
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif%}
+
+
+    <h2>Thunderscrip LogIn!!</h2>
+
+    <!-- Login Form -->
+    <form method="POST" action="{% url "login" %}">
+
+      {% csrf_token %}
+
+      <input type="text" id="login" class="fadeIn second" placeholder="Username" name="username">
+      <input type="password" id="login" class="fadeIn second" placeholder="Password" name="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+
+  {% endblock %}
+  </div>
+</div>

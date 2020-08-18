@@ -1,132 +1,73 @@
-<!doctype html>
-<html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>ThunderScript</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/sticky-footer-navbar/">
+<!-- Django -->
+{% block head_content %}
+<title>GEO LOCATOR</title>
+{% endblock%}
+{% load static %}
+<!-- Stylesheet -->
 
-    <!-- Bootstrap core CSS -->
-<link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
 
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="https://img2.freepng.es/20180407/use/kisspng-kali-linux-backtrack-penetration-test-offensive-se-linux-5ac8b54c7de685.1055420115231030525157.jpg" sizes="180x180">
-<link rel="icon" href="https://img2.freepng.es/20180407/use/kisspng-kali-linux-backtrack-penetration-test-offensive-se-linux-5ac8b54c7de685.1055420115231030525157.jpg" sizes="32x32" type="image/png">
-<link rel="icon" href="https://img2.freepng.es/20180407/use/kisspng-kali-linux-backtrack-penetration-test-offensive-se-linux-5ac8b54c7de685.1055420115231030525157.jpg" sizes="16x16" type="image/png">
-<link rel="manifest" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-<link rel="icon" href="https://img2.freepng.es/20180407/use/kisspng-kali-linux-backtrack-penetration-test-offensive-se-linux-5ac8b54c7de685.1055420115231030525157.jpg">
-<meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
-<meta name="theme-color" content="#563d7c">
+   #geo{
+     background-image: url(https://cdnb.artstation.com/p/assets/images/images/029/376/863/large/the-aegis-system-zaijay-zero-mackie-and-tycho-battle97.jpg?1597338189);
+   }
+
+</style>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-      #mt-5{
-          color: aqua;
-          font-style: italic;
-      }
-
-      #mt-6{
-          color: aqua;
-          font-family: italic;
-      }
-      #form{
-        color: aqua;
-
-
-      }
-
-      #zero{
-        background-image: url(https://wallpapercave.com/wp/wp2998663.jpg);
-        background-size: cover;
-
-      }
-      #one{
-          color: aqua;
-      }
-
-      #lio{
-        font-style: unset;
-        font-family: fantasy;
-        color: aqua;
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.com/docs/4.4/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
-  </head>
-  <body class="d-flex flex-column h-100" id="zero">
-    <header>
-  <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">ThunderScript</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="http://127.0.0.1:8000/Scan/">GEOlocate<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/plataforma/">EMAIL HUNTER</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/info/"  >EMAIL INFO</a>
-        </li>
-      </ul>
-
-    </div>
-  </nav>
-</header>
-
-<!-- Begin page content -->
-<main role="main" class="flex-shrink-0">
-  <div class="container">
-    <h1 id="mt-5" class="mt-5">ThunderScript</h1>
-    <p id="mt-6"class="lead">Revolutionary Hacking</p>
-    <form action="" method="POST">
-        {% csrf_token %}
-      <div id="form">  {{mack}} </div>
-        <button type="submit">Send</button>
-      </form>
-      <div class="col-md-12">
-           <div>
-            <h4 id="mt-6">Resultados</h4>
-          </div>
-
-
-            <pre id="lio">{{output}}</pre>
-
-
-
-      </div>
+<!-- HTML -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">ThunderScript</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://127.0.0.1:8000/main/Scan/">GEO LOCATE <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:8000/main/plataforma/">EMAIL HUNTER</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:8000/main/info/">EMAIL INFO</a>
+      </li>
+    </ul>
 
   </div>
-</main>
+</nav>
 
-<footer class="footer mt-auto py-3">
-  <div class="container">
-    <span class="text-muted" id="one">Made By Zaijay.</span>
+<div class="wrapper fadeInDown" id="geo">
+  <div id="formContent">
+
+    {% block container %}
+
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif%}
+
+
+    <h2>GEO LOCATOR</h2>
+
+    <!-- Login Form -->
+    <form method="POST">
+
+      {% csrf_token %}
+      <div id="login" class="fadeIn second">{{mack}}</div>
+      <input type="submit" class="fadeIn fourth" value="Hack!!">
+    </form>
+
+    <container>
+      <pre id="lio">{{output}}</pre>
+    </container>
+
+
+  {% endblock %}
   </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script></body>
-</html>
+</div>
